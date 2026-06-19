@@ -28,6 +28,15 @@ jobs:
       - name: Generate Xcode project
         run: xcodegen generate
 
+      - name: Downgrade project format for the runner's Xcode
+        # Latest XcodeGen writes objectVersion 77 (Xcode 26), which the runner's
+        # Xcode can't open. Rewrite it to 56 (Xcode 14+); XcodeGen lists files
+        # explicitly (no synchronized groups), so the older format parses fine.
+        run: |
+          sed -i '' -E 's/objectVersion = [0-9]+;/objectVersion = 56;/' \
+            OBDScanner.xcodeproj/project.pbxproj
+          grep -m1 objectVersion OBDScanner.xcodeproj/project.pbxproj
+
       - name: Build (no code signing)
         run: |
           xcodebuild \
