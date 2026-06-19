@@ -10,6 +10,10 @@ options:
   deploymentTarget:
     iOS: "16.0"
   createIntermediateGroups: true
+  # Pin the .pbxproj format. Latest XcodeGen emits objectVersion 77 (Xcode 26),
+  # which the CI runner's Xcode 15.4 can't open ("future project file format").
+  # 56 = Xcode 14+ format, readable by every Xcode the macOS runners ship.
+  objectVersion: 56
 
 targets:
   OBDScanner:
