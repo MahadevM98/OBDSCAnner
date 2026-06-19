@@ -1,0 +1,58 @@
+# XcodeGen spec — generates OBDScanner.xcodeproj from these sources.
+# A hand-written .xcodeproj is fragile; this file is not. The CI workflow runs
+# `xcodegen generate` before building, so you never commit the project file.
+#
+# Local use (if you ever get Mac access):  brew install xcodegen && xcodegen generate
+name: OBDScanner
+
+options:
+  bundleIdPrefix: com.obdscanner
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+targets:
+  OBDScanner:
+    type: application
+    platform: iOS
+    sources:
+      - path: OBDScanner
+    info:
+      path: OBDScanner/Info.plist
+      properties:
+        CFBundleDisplayName: OBD Scanner
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        # Required: iOS kills the app on first Bluetooth use without this.
+        NSBluetoothAlwaysUsageDescription: "Connects to your OBD-II adapter to read vehicle data."
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.obdscanner.app
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"   # iPhone + iPad
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: NO
+        # Free Apple IDs sign at install time (Sideloadly/AltStore), so CI builds
+        # unsigned. These keep a no-signing device build happy.
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGN_IDENTITY: ""
+
+# Explicit shared scheme so CI's `-scheme OBDScanner` always resolves.
+schemes:
+  OBDScanner:
+    build:
+      targets:
+        OBDScanner: all
+    run:
+      config: Release
+    archive:
+      config: Release

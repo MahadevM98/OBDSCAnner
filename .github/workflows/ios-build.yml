@@ -1,0 +1,57 @@
+name: Build iOS (unsigned IPA)
+
+# Builds an UNSIGNED .ipa on a free macOS runner. Download it from the run's
+# Artifacts, then sign + install on your iPhone with Sideloadly (Windows) or
+# AltServer-Linux using a free Apple ID. See ios/README.md.
+
+on:
+  workflow_dispatch:      # lets you trigger it by hand from the Actions tab
+  push:
+    branches: [ main ]
+    paths: [ "ios/**", ".github/workflows/ios-build.yml" ]
+
+jobs:
+  build:
+    runs-on: macos-14
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build (no code signing)
+        run: |
+          xcodebuild \
+            -project OBDScanner.xcodeproj \
+            -scheme OBDScanner \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            clean build
+
+      - name: Package unsigned .ipa
+        run: |
+          cd build/Build/Products/Release-iphoneos
+          mkdir Payload
+          mv OBDScanner.app Payload/
+          zip -qr OBDScanner-unsigned.ipa Payload
+          ls -la
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OBDScanner-unsigned-ipa
+          path: ios/build/Build/Products/Release-iphoneos/OBDScanner-unsigned.ipa
+          if-no-files-found: error

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Xcode / XcodeGen (project is generated in CI, never committed)
+ios/OBDScanner.xcodeproj/
+ios/build/
+ios/OBDScanner/Info.plist
+DerivedData/
+*.ipa
+*.xcuserstate
+.DS_Store

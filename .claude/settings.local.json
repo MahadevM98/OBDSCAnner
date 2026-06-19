@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import obd; print\\('obd', obd.__version__\\)\")",
+      "Bash(python3 -c \"import PyQt5; print\\('pyqt5 ok'\\)\")",
+      "Bash(python3 -c \"import PyQt6; print\\('pyqt6 ok'\\)\")",
+      "Bash(python3 -c \"import tkinter; print\\('tkinter ok'\\)\")",
+      "Bash(python3 -c \"import serial; print\\('pyserial ok'\\)\")",
+      "Bash(mkdir -p obdscanner)",
+      "Bash(python3 -c \"import socket; print\\('AF_BLUETOOTH:', hasattr\\(socket,'AF_BLUETOOTH'\\), 'BTPROTO_RFCOMM:', hasattr\\(socket,'BTPROTO_RFCOMM'\\)\\)\")",
+      "Bash(python3 *)",
+      "Bash(chmod +x run.sh obdscan.py)",
+      "Bash(bluetoothctl show *)",
+      "Bash(bluetoothctl info *)",
+      "Bash(apt-cache policy *)",
+      "Bash(bluetoothctl remove *)",
+      "Bash(bluetoothctl --version)",
+      "Bash(sdptool browse *)",
+      "Bash(grep -iA6 \"serial port\\\\|RFCOMM\\\\|Service Name\")",
+      "Bash(sdptool records *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(git add *)"
+    ]
+  }
+}

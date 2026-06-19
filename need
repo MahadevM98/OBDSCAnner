@@ -1,0 +1,348 @@
+# Main Menu Structure
+
+## Dashboard
+
+### Key Metrics
+
+* RPM
+* Speed
+* Coolant Temperature
+* Battery Voltage
+* Engine Load
+* MAP (Manifold Absolute Pressure)
+* Throttle Position
+* Fuel Trim Summary
+* Active DTC Count
+
+---
+
+## Fault Codes
+
+### Diagnostics
+
+* Read Codes
+* Clear Codes
+* Pending Codes
+* Permanent Codes
+* Freeze Frame Data
+* Export Diagnostic Report
+
+---
+
+## Live Data
+
+### Monitoring
+
+* Select Sensors
+* Real-Time Sensor Graphs
+* Record Data Logs
+* Export CSV
+* Custom Dashboards
+
+---
+
+## Engine Health
+
+### Automatic Health Analysis
+
+#### Vacuum Leak Detection
+
+* Analyze MAP values
+* Analyze Fuel Trims
+* Idle Stability Monitoring
+
+#### Fuel Trim Analysis
+
+* STFT Evaluation
+* LTFT Evaluation
+* Combined Trim Interpretation
+
+#### Ignition Timing Analysis
+
+* Timing Advance Monitoring
+* Knock Activity Detection
+
+#### Misfire Detection
+
+* Total Misfires
+* Cylinder-Specific Misfires
+
+#### O2 Sensor Health
+
+* Sensor Response Rate
+* Heater Status
+* Switching Performance
+
+#### Cooling System Health
+
+* Warm-Up Performance
+* Operating Temperature Analysis
+
+#### Charging System Health
+
+* Battery Voltage Analysis
+* Alternator Performance
+
+### Health Status
+
+* Normal
+* Suspect
+* Fault Likely
+
+---
+
+## Performance
+
+### Performance Tests
+
+* 0–60 mph
+* 0–100 km/h
+* Quarter Mile Estimation
+* Horsepower Estimation
+* Torque Estimation
+* Wide Open Throttle Logger
+
+---
+
+## Fuel System
+
+### Fuel Analysis
+
+* STFT Graph
+* LTFT Graph
+* Combined Fuel Trim Graph
+* Fuel Economy Tracking
+* Rich/Lean Condition Diagnosis
+
+---
+
+## Cooling System
+
+### Cooling Analysis
+
+* Coolant Temperature Graph
+* Warm-Up Analysis
+* Thermostat Health Check
+* Cooling Fan Operation Monitor
+* Overheating Detection
+
+### Display
+
+* Current Temperature
+* Maximum Temperature
+* Average Temperature
+
+---
+
+## Catalytic Converter Analyzer
+
+### Inputs
+
+* Upstream O2 Sensor
+* Downstream O2 Sensor
+* Fuel Trims
+* Engine Load
+* RPM
+
+### Automatic Checks
+
+* Downstream O2 Mirrors Upstream O2
+* Excessive Backpressure Suspicion
+* Catalyst Efficiency Monitor Status
+* Rich-Running Damage Risk
+
+### Results
+
+* Catalyst Likely Healthy
+* Catalyst Efficiency Degraded
+* Possible Restriction / Clogging
+* More Testing Required
+
+---
+
+## Intake & Exhaust
+
+### Analysis
+
+* MAP Sensor Analysis
+* Intake Restriction Detection
+* Exhaust Restriction Detection
+* Airflow Trend Monitoring
+
+### Guided Restriction Test
+
+#### Idle
+
+* Record MAP Reading
+
+#### 2500 RPM
+
+* Record MAP Reading
+
+#### Wide Open Throttle
+
+* Record MAP Reading
+
+### Automatic Interpretation
+
+* Normal Airflow
+* Intake Restriction Suspected
+* Exhaust Restriction Suspected
+* Further Testing Recommended
+
+---
+
+## Ignition System
+
+### Monitoring
+
+* Timing Advance Graph
+* Knock Retard Graph
+* Timing Pull Detection
+
+### Warnings
+
+* Excessive Knock Retard
+* Timing Not Advancing Correctly
+* Potential Fuel Quality Issue
+* Potential Ignition Issue
+
+---
+
+## O2 Sensor Laboratory
+
+### Diagnostics
+
+* Upstream O2 Graph
+* Downstream O2 Graph
+* Sensor Switching Speed
+* Heater Circuit Status
+* Lazy Sensor Detection
+
+### Sensor Evaluation
+
+* Healthy
+* Slow Response
+* Heater Fault
+* Replacement Recommended
+
+---
+
+## Misfire Center
+
+### Monitoring
+
+* Total Misfires
+* Per-Cylinder Misfires
+* Misfire History
+* Misfire Rate Graph
+
+### Analysis
+
+* Random Misfire Detection
+* Cylinder-Specific Fault Detection
+* Severity Assessment
+
+---
+
+## Transmission
+
+### Monitoring
+
+* Transmission Temperature
+* Gear Estimation
+* Shift Quality Analysis
+* Torque Converter Lockup Status
+
+### Health Checks
+
+* Overheating Detection
+* Shift Consistency Analysis
+* Lockup Verification
+
+---
+
+## Battery & Charging
+
+### Monitoring
+
+* Battery Voltage
+* Charging Voltage
+* Cranking Voltage
+* Alternator Output
+
+### Automatic Detection
+
+* Weak Battery
+* Undercharging
+* Overcharging
+* Charging System Fault
+
+---
+
+## Pre-Purchase Inspection
+
+### One-Click Vehicle Scan
+
+### Report Sections
+
+* Engine
+* Transmission
+* Catalytic Converter
+* Cooling System
+* Fuel System
+* Battery & Charging System
+
+### Overall Vehicle Score
+
+* Excellent
+* Good
+* Fair
+* Poor
+
+### Export Options
+
+* PDF Report
+* Share Report
+* Save Inspection History
+
+---
+
+## Drive Recorder
+
+### Logging Features
+
+* Record All Sensors
+* GPS Integration
+* Trip Replay
+* Log Comparison
+
+### Analysis
+
+* Route Playback
+* Sensor Overlay
+* Performance Review
+
+---
+
+## Manufacturer-Specific Diagnostics (Honda)
+
+### Advanced Modules
+
+* Read ABS Data
+* Read Transmission Module Data
+* Read Body Control Module Data
+* Read SRS Data (if supported)
+
+### Advanced Functions
+
+* Module-Specific Fault Codes
+* Live Data Streams
+* Service Functions
+* Actuator Tests (where supported)
+
+### Requirements
+
+* Reverse-Engineered Honda Protocol Support
+* Enhanced PIDs and Proprietary Commands Required
+* Not Available Through Standard OBD-II Alone

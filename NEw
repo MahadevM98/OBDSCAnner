@@ -1,0 +1,83 @@
+
+Create These Analysis Cards
+Fuel Trim Analyzer
+
+Show:
+
+    Normal: -10% to +10%
+    Warning: ±10% to ±20%
+    Fault: >20%
+
+Possible causes:
+
+    Vacuum leak
+    Fuel pump
+    Injector issue
+    Sensor issue
+
+Catalytic Converter Analyzer
+
+Inputs:
+
+    O2 B1S1
+    O2 B1S2
+    Fuel trims
+    Engine load
+
+Results:
+
+    Cat likely healthy
+    Cat efficiency degraded
+    Cat possibly restricted
+    O2 sensor issue
+
+Ignition Analyzer
+
+Look for:
+
+    Timing advance at cruise
+    Timing pull under load
+
+Flag:
+
+    Excessive knock retard
+    Unusual timing behavior
+
+MAP Sensor Analyzer
+
+Important values:
+
+Warm Idle
+
+    Usually around 25–40 kPa
+
+2500 RPM No Load
+
+    Usually lower than idle
+
+Wide Open Throttle
+
+    Near atmospheric pressure (~95–100 kPa depending on altitude)
+
+Flag anything abnormal.
+Cooling System Analyzer
+
+Track:
+
+    Coolant temperature
+    Warm-up time
+
+Flag:
+
+    Thermostat stuck open
+    Overheating
+
+Honda-Specific Data (if available)
+
+Try to read:
+
+    VTEC status
+    VTC angle
+    Knock count
+    Knock retard
+    Transmission temperature
